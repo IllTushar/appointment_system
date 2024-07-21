@@ -27,3 +27,10 @@ class Doctor(Base):
     __table_args__ = (
         CheckConstraint('rating > 0 AND rating <= 5', name='rating_check'),
     )
+
+
+class Clinic(Base):
+    __tablename__ = 'Clinic'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(225), nullable=False)
+    address = Column(String(225), nullable=False)
